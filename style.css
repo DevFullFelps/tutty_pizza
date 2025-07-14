@@ -4,8 +4,12 @@
     box-sizing: border-box; /*Ele muda a forma como o navegador calcula o tamanho dos elementos. O width INCLUI o conteúdo, padding e a borda. Isso evita que seu layout “estoure” e fica muito mais previsível.*/
 }
 
+body{
+    background-color: #DBDBDB;
+}
+
 header{
-    background-color: #FFFFFF; 
+    background-color: #E4D9C0; 
     display: flex;
 
     justify-content: space-between; /*Faz um espaço entre os elementos até suas extremidades*/
@@ -17,12 +21,25 @@ header{
     box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.418);
 }
 
+header img{
+    width: 90px;
+    height: auto;
+    padding-right: 10px;
+}
+
 header h1{
-    font-size: 24px;
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+    letter-spacing: 1.9px;
+    font-family: "Luckiest Guy", cursive;
+    cursor:default;
+
+
 }
 
 header li i{
-    font-size: 15px;
+    font-size: 20px;
     margin-right: 8px;
 }
 
@@ -44,7 +61,7 @@ header .i-sobre {
 header .i-inicio:hover,
 header .i-cardapio:hover,
 header .i-sobre:hover {
-    color: #D90926;
+    color: #A3283A;
 }
 
 
@@ -86,4 +103,17 @@ header .b-criar:hover{
 header .b-entrar:hover{
     background-color: #e0dedf;
 }
+main{
+    background-color: #F8F2F4;
+}
 
+section.banner{
+    display: flex;
+    margin: 50px auto;
+    justify-content: center;
+    align-items: center;
+    background-color: #A3283A;;
+    width: 96vw;
+    height: 80vh;
+    border-radius: 30px;
+}
