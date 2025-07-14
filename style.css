@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*Ele muda a forma como o navegador calcula o tamanho dos elementos. O width INCLUI o conteúdo, padding e a borda. Isso evita que seu layout “estoure” e fica muito mais previsível.*/
+}
+
+header{
+    background-color: #FFFFFF; 
+    display: flex;
+
+    justify-content: space-between; /*Faz um espaço entre os elementos até suas extremidades*/
+
+    align-items: center; /*Alinhamento na vertical*/
+
+    padding: 20px;
+
+    box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.418);
+}
+
+header h1{
+    font-size: 24px;
+}
+
+header li i{
+    font-size: 15px;
+    margin-right: 8px;
+}
+
+header ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+header .i-inicio,
+header .i-cardapio,
+header .i-sobre {
+    transition: 0.2s ease;
+}
+
+header .i-inicio:hover,
+header .i-cardapio:hover,
+header .i-sobre:hover {
+    color: #D90926;
+}
+
+
+
+
+header button{
+    border-radius: 30px;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-style: none;
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+header .botoes{
+    display: flex;
+    gap: 10px;    
+    align-items: center;
+    justify-content: center;
+}
+
+header .b-criar{
+    background-color: black;
+    color: white;
+    transition: 0.2s ease;
+
+}
+
+header .b-entrar{
+    background-color: white;
+    color: black;
+    transition: 0.2s ease;
+
+}
+
+header .b-criar:hover{
+    background-color: #000000a2;
+}
+header .b-entrar:hover{
+    background-color: #e0dedf;
+}
+
