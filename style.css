@@ -3,22 +3,26 @@
     padding: 0;
     box-sizing: border-box; /*Ele muda a forma como o navegador calcula o tamanho dos elementos. O width INCLUI o conteúdo, padding e a borda. Isso evita que seu layout “estoure” e fica muito mais previsível.*/
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body{
     background-color: #DBDBDB;
 }
 
-header{
-    background-color: #E4D9C0; 
-    display: flex;
-
-    justify-content: space-between; /*Faz um espaço entre os elementos até suas extremidades*/
-
-    align-items: center; /*Alinhamento na vertical*/
-
-    padding: 20px;
-
-    box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.418);
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #E4D9C0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  z-index: 999; /* Garante que fique acima de tudo */
+  box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.418);
 }
 
 header img{
@@ -36,6 +40,18 @@ header h1{
     cursor:default;
 
 
+}
+header ul li a {
+  color: inherit;
+  text-decoration: none;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  transition: 0.2s ease;
+}
+
+header ul li a:hover {
+  color: #A3283A;
 }
 
 header li i{
@@ -63,8 +79,6 @@ header .i-cardapio:hover,
 header .i-sobre:hover {
     color: #A3283A;
 }
-
-
 
 
 header button{
@@ -96,6 +110,9 @@ header .b-entrar{
     transition: 0.2s ease;
 
 }
+#inicio, #cardapio, #sobre {
+  scroll-margin-top: 120px;
+}
 
 header .b-criar:hover{
     background-color: #000000a2;
@@ -104,16 +121,237 @@ header .b-entrar:hover{
     background-color: #e0dedf;
 }
 main{
-    background-color: #F8F2F4;
+    margin-top: 120px;
+    background-color: #DBDBDB;
 }
 
 section.banner{
     display: flex;
-    margin: 50px auto;
+    margin: 150px auto;
     justify-content: center;
     align-items: center;
     background-color: #A3283A;;
     width: 96vw;
     height: 80vh;
     border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.418);
+
+}
+
+section img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+h2 i {
+  margin-right: 8px;
+  color: #a3283a;
+}
+
+h2{
+    font-family: "Luckiest Guy";
+    letter-spacing: 3px;
+}
+
+main .container-destaque {
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main .destaques {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+main .destaques div {
+  background-color: #E4D9C0;
+  color: #333;
+  padding: 15px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+main .destaques img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+main .destaques h4 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+main .destaques p {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+main .destaques button {
+  padding: 8px 16px;
+  background-color: #a3283a;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+
+}
+
+main .destaques button:hover {
+  background-color: #8f1f31;
+}
+
+.container-pizza {
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pizzas {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.pizza {
+  background-color: #E4D9C0;
+  color: #333;
+  padding: 15px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pizza img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.pizza h4 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.pizza p {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.pizza h5 {
+  font-size: 18px;
+  color: #a3283a;
+  margin: 5px 0;
+}
+
+.botao-personalizar button {
+  padding: 8px 16px;
+  background-color: #a3283a;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+}
+
+.botao-personalizar button:hover {
+  background-color: #8f1f31;
+}
+
+footer {
+  background-color: #E4D9C0;
+  padding: 40px 20px 20px;
+  color: #333;
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.1);
+  margin-top: 50px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo img {
+  width: 60px;
+  height: auto;
+}
+
+.footer-logo h2 {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 24px;
+  margin: 0;
+  color: #A3283A;
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.footer-nav ul li a:hover {
+  color: #A3283A;
+}
+
+.footer-social a {
+  color: #333;
+  font-size: 20px;
+  margin-right: 15px;
+  transition: color 0.2s ease;
+}
+
+.footer-social a:hover {
+  color: #A3283A;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 14px;
+  color: #555;
 }
