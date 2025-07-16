@@ -29,21 +29,26 @@
       <h1>
         <img src="imagens/logo_pizza.webp" alt="logo_pizzaria" />Tutty Pizzas
       </h1>
-      <ul>
-        <li class="i-inicio">
-          <a href="#"><i class="fas fa-home"></i>Início</a>
-        </li>
-        <li class="i-cardapio">
-          <a href="#cardapio"><i class="fas fa-pizza-slice"></i>Cardápio</a>
-        </li>
-        <li class="i-sobre">
-          <a href="#"><i class="fas fa-info-circle"></i>Sobre</a>
-        </li>
-      </ul>
-      <div class="botoes">
-        <button class="b-entrar">Entrar</button>
-        <button class="b-criar">Criar Conta</button>
-      </div>
+      <button class="menu-toggle" aria-label="Abrir Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="menu">
+        <ul>
+          <li class="i-inicio">
+            <a href="#"><i class="fas fa-home"></i>Início</a>
+          </li>
+          <li class="i-cardapio">
+            <a href="#cardapio"><i class="fas fa-pizza-slice"></i>Cardápio</a>
+          </li>
+          <li class="i-sobre">
+            <a href="#"><i class="fas fa-info-circle"></i>Sobre</a>
+          </li>
+        </ul>
+        <div class="botoes">
+          <button class="b-entrar">Entrar</button>
+          <button class="b-criar">Criar Conta</button>
+        </div>
+      </nav>
     </header>
     <section class="banner" id="inicio">
       <img src="imagens/banner_tutty.png" alt="banner" />
@@ -138,4 +143,12 @@
       </p>
     </footer>
   </body>
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
 </html>

@@ -11,6 +11,22 @@ body{
     background-color: #DBDBDB;
 }
 
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.menu .botoes {
+  display: flex;
+  gap: 10px;
+}
 header {
   position: fixed;
   top: 0;
@@ -355,6 +371,14 @@ footer {
   font-size: 14px;
   color: #555;
 }
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #A3283A;
+}
 
 /* Responsividade */
 
@@ -387,44 +411,170 @@ footer {
   section.banner{
     width: 1000px;    
     height: 450px;
+  }
+   main .destaques div,
+  .pizza {
+    width: 400px;
+  }
 
+  header h1 {
+    font-size: 30px;
   }
 }
+
 @media (max-width: 1050px){
   section.banner{
     width: 850px;    
     height: 400px;
+  }
+    main .destaques {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 
+  main .destaques div,
+  .pizza {
+    width: 45%;
+  }
+
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .footer-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footer-logo h2 {
+    font-size: 20px;
   }
 }
 
-@media (max-width: 900px){
-  section.banner{
-    width: 750px;    
+@media (max-width: 900px) {
+  section.banner {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    width: 750px;
     height: 330px;
+  }
 
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  nav.menu {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  nav.menu.active {
+    display: flex;
+  }
+
+  nav.menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav.menu .botoes {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  nav.menu button {
+    width: 80%;
+  }
+
+  header ul {
+    display: none;
+  }
+
+  header .botoes {
+    display: none;
+  }
+ 
+  main{
+    margin-top: 25px;
+  }
+  main .destaques div,
+  .pizza {
+    width: 80%;
+  }
+
+  .footer-logo,
+  .footer-nav,
+  .footer-social {
+    justify-content: center;
+    text-align: center;
   }
 }
 
 @media (max-width: 770px){
   section.banner{
+    margin-top: 25px;
     width: 500px;    
     height: 330px;
-
   }
+  
 }
 
 
 @media (max-width: 510px){
   section.banner{
+    margin-top: 25px;
     width: 450px;    
     height: 250px;
+  }
+    header h1 {
+    font-size: 22px;
+    text-align: center;
+  }
 
+  main .destaques div,
+  .pizza {
+    width: 95%;
+  }
+
+  .footer-logo h2 {
+    font-size: 18px;
+  }
+
+  .footer-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-copy {
+    font-size: 12px;
   }
 }
 
 @media (max-width: 460px){
   section.banner{
+    margin-top: 25px;
     width: 350px;    
     height: 250px;
     background-image: url("imagens/banner_tutty_tela_menor_ainda.png");
