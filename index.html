@@ -41,7 +41,7 @@
             <a href="#cardapio"><i class="fas fa-pizza-slice"></i>Cardápio</a>
           </li>
           <li class="i-sobre">
-            <a href="#"><i class="fas fa-info-circle"></i>Sobre</a>
+            <a href="#" id="btn-sobre"><i class="fas fa-info-circle"></i>Sobre</a>
           </li>
         </ul>
         <div class="botoes">
@@ -150,5 +150,9 @@
     toggleBtn.addEventListener("click", () => {
       menu.classList.toggle("active");
     });
+    document.getElementById('btn-sobre').addEventListener('click', function(event) {
+    event.preventDefault(); // impede o comportamento padrão do link
+    alert('Site acadêmico / Criado por Felipe Adriano');
+  });
   </script>
 </html>
