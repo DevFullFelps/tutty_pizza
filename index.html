@@ -41,7 +41,9 @@
             <a href="#cardapio"><i class="fas fa-pizza-slice"></i>Cardápio</a>
           </li>
           <li class="i-sobre">
-            <a href="#" id="btn-sobre"><i class="fas fa-info-circle"></i>Sobre</a>
+            <a href="#" id="btn-sobre"
+              ><i class="fas fa-info-circle"></i>Sobre</a
+            >
           </li>
         </ul>
         <div class="botoes">
@@ -142,6 +144,36 @@
         &copy; 2025 Tutty Pizzas. Criado por Felipe Adriano.
       </p>
     </footer>
+    <div id="modal-personalizar" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>Escolha até 2 sabores</h3>
+        <form id="form-sabores">
+          <label
+            ><input type="checkbox" name="sabores" value="Calabresa" />
+            Calabresa</label
+          ><br />
+          <label
+            ><input type="checkbox" name="sabores" value="Frango c/ Catupiry" />
+            Frango c/ Catupiry</label
+          ><br />
+          <label
+            ><input type="checkbox" name="sabores" value="Portuguesa" />
+            Portuguesa</label
+          ><br />
+          <label
+            ><input type="checkbox" name="sabores" value="Bacon" /> Bacon</label
+          ><br />
+          <label
+            ><input type="checkbox" name="sabores" value="Marguerita" />
+            Marguerita</label
+          ><br />
+        </form>
+        <p style="font-size: 14px; color: #a3283a; margin-top: 10px">
+          * Este é apenas um exemplo de seleção
+        </p>
+      </div>
+    </div>
   </body>
   <script>
     const toggleBtn = document.querySelector(".menu-toggle");
@@ -150,9 +182,38 @@
     toggleBtn.addEventListener("click", () => {
       menu.classList.toggle("active");
     });
-    document.getElementById('btn-sobre').addEventListener('click', function(event) {
-    event.preventDefault(); // impede o comportamento padrão do link
-    alert('Site acadêmico / Criado por Felipe Adriano');
-  });
+    document
+      .getElementById("btn-sobre")
+      .addEventListener("click", function (event) {
+        event.preventDefault(); // impede o comportamento padrão do link
+        alert("Site acadêmico / Criado por Felipe Adriano");
+      });
+    document
+      .querySelectorAll(".botao-personalizar button")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          document.getElementById("modal-personalizar").style.display = "flex";
+        });
+      });
+
+    
+    document.querySelector(".close-modal").addEventListener("click", () => {
+      document.getElementById("modal-personalizar").style.display = "none";
+      document
+        .querySelectorAll('input[name="sabores"]')
+        .forEach((input) => (input.checked = false)); // limpa seleção
+    });
+
+    // Limitar seleção a 2 sabores
+    const checkboxes = document.querySelectorAll('input[name="sabores"]');
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
+        const selecionados = Array.from(checkboxes).filter((i) => i.checked);
+        if (selecionados.length > 2) {
+          checkbox.checked = false;
+          alert("Você só pode selecionar até 2 sabores.");
+        }
+      });
+    });
   </script>
 </html>
