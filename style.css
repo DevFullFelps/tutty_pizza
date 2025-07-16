@@ -130,9 +130,9 @@ section.banner{
     margin: 150px auto;
     justify-content: center;
     align-items: center;
-    background-color: #A3283A;;
-    width: 96vw;
-    height: 80vh;
+    background-color: #A3283A;
+    width: 1600px;
+    height: 750px;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.418);
@@ -354,4 +354,82 @@ footer {
   margin-top: 25px;
   font-size: 14px;
   color: #555;
+}
+
+/* Responsividade */
+
+@media (max-width: 1430px){
+  .banner img{
+    display: none;
+  }
+  section.banner{
+    background-image: url("imagens/banner_tutty_tela_menor.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1325px;
+    height: 450px;
+
+
+
+    
+  }
+}
+
+@media (max-width: 1365px){
+  section.banner{
+    width: 1250px;    
+    height: 450px;
+
+  }
+}
+@media (max-width: 1270px){
+  section.banner{
+    width: 1000px;    
+    height: 450px;
+
+  }
+}
+@media (max-width: 1050px){
+  section.banner{
+    width: 850px;    
+    height: 400px;
+
+  }
+}
+
+@media (max-width: 900px){
+  section.banner{
+    width: 750px;    
+    height: 330px;
+
+  }
+}
+
+@media (max-width: 770px){
+  section.banner{
+    width: 500px;    
+    height: 330px;
+
+  }
+}
+
+
+@media (max-width: 510px){
+  section.banner{
+    width: 450px;    
+    height: 250px;
+
+  }
+}
+
+@media (max-width: 460px){
+  section.banner{
+    width: 350px;    
+    height: 250px;
+    background-image: url("imagens/banner_tutty_tela_menor_ainda.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
